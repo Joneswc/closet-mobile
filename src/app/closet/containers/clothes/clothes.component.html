@@ -1,1 +1,1 @@
-<app-clothes-detail></app-clothes-detail>
+<app-clothes-detail [clothes]="closet$ | async" (actionEmitter)="dispatch($event)"></app-clothes-detail>

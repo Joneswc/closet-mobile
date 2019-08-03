@@ -11,3 +11,8 @@ export const getAllCloset = createSelector(
   getClosetState,
   state => clothesAdapter.getSelectors().selectAll(state)
 );
+
+export const getSelectedCloset = createSelector(
+  getClosetState,
+  state => state.clothes
+)

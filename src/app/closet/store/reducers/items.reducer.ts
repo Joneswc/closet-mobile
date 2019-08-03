@@ -20,6 +20,7 @@ const pog = [
   {id: 3, name: 'Calça Jeans'},
   {id: 4, name: 'Meia'},
 ]
+
 const initialState = clothesAdapter.addAll(pog, clothesAdapter.getInitialState());
 
 // const initialState = clothesAdapter.getInitialState();

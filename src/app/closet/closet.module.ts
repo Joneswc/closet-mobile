@@ -9,6 +9,8 @@ import { ClosetComponent } from './containers/closet/closet.component';
 import {SharedModule} from '../core/shared/shared.module';
 import {clothesReducer} from './store/reducers/global.reducer';
 import {StoreModule} from '@ngrx/store';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material';
 
 
 @NgModule({
@@ -22,7 +24,7 @@ import {StoreModule} from '@ngrx/store';
     CommonModule,
     ClosetRoutingModule,
     SharedModule,
-    StoreModule.forFeature('clothes', clothesReducer),
+    StoreModule.forFeature('clothes', clothesReducer)
   ]
 })
 export class ClosetModule { }
