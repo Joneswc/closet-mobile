@@ -1,0 +1,7 @@
+{
+  "appId": "com.jones.closet",
+  "appName": "Closet",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}
