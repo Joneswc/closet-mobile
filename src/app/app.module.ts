@@ -11,6 +11,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import {CustomSerializer} from './reducers/custom-route-serializer';
+import { AngularFireModule } from '@angular/fire';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import {CustomSerializer} from './reducers/custom-route-serializer';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     StoreRouterConnectingModule.forRoot({
       serializer: CustomSerializer
-    })
+    }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

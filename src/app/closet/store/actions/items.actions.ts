@@ -22,5 +22,6 @@ export const UpdateItem = createAction(
 
 export const DeleteItem = createAction(
   '[Closet] Delet clothes',
-  props<{id: number}>()
+  // props<{id: number}>()
+  props<{id: string}>()
 );

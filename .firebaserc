@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "closet-match-clothes": {
+      "hosting": {
+        "closet": [
+          "closet-match-clothes"
+        ]
+      }
+    }
+  }
+}

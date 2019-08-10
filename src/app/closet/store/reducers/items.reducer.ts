@@ -14,16 +14,16 @@ export interface ClosetState extends EntityState<Clothes> {
 }
 
 // linhas 17 a 22, só pra começar com algum valor
-const pog = [
-  {id: 1, name: 'Boné'},
-  {id: 2, name: 'Camiseta'},
-  {id: 3, name: 'Calça Jeans'},
-  {id: 4, name: 'Meia'},
-]
+// const pog = [
+//   {id: 1, name: 'Boné'},
+//   {id: 2, name: 'Camiseta'},
+//   {id: 3, name: 'Calça Jeans'},
+//   {id: 4, name: 'Meia'},
+// ]
 
-const initialState = clothesAdapter.addAll(pog, clothesAdapter.getInitialState());
+// const initialState = clothesAdapter.addAll(pog, clothesAdapter.getInitialState());
 
-// const initialState = clothesAdapter.getInitialState();
+const initialState = clothesAdapter.getInitialState();
 
 const reducer = createReducer(
   initialState,

@@ -136,8 +136,13 @@
               "devServerTarget": "closet:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "closet"
 }
