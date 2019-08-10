@@ -7,7 +7,7 @@ import { ClothesDetailComponent } from './component/clothes-detail/clothes-detai
 import { ClothesComponent } from './containers/clothes/clothes.component';
 import { ClosetComponent } from './containers/closet/closet.component';
 import {SharedModule} from '../core/shared/shared.module';
-import {clothesReducer} from './store/reducers/global.reducer';
+import {clothesReducer} from './store/reducers/feature.reducer';
 import {StoreModule} from '@ngrx/store';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material';

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import {Clothes} from '../../../model/clothes.model';
 import {Action, select, Store} from '@ngrx/store';
-import {ClothesState} from '../../store/reducers/global.reducer';
+import {ClothesState} from '../../store/reducers/feature.reducer';
 import {getAllCloset} from '../../store/selectors/items.selectors';
 
 @Component({
