@@ -26,7 +26,7 @@ export const UpdateItem = createAction(
 )
 
 export const DeleteItem = createAction(
-  '[Closet] Delet clothes',
+  '[Closet] Delete clothes',
   // props<{id: number}>()
   props<{id: string}>()
 );

@@ -13,7 +13,9 @@ export class ClothesDetailComponent implements OnInit {
 
   @Input()
   set clothes(clothes: Clothes) {
-    this.clothesForm.patchValue(clothes);
+    if (clothes) {
+      this.clothesForm.patchValue(clothes);
+    }
   }
   // @Input()
   // clothes: Clothes;
