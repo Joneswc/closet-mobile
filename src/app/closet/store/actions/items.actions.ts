@@ -1,5 +1,10 @@
 import {createAction, props} from '@ngrx/store';
-import {Clothes} from '../../../model/clothes.model';
+import {Clothes} from '../../model/clothes.model';
+
+export const updateClothesList = createAction(
+  '[Closet] Update clothes list',
+  props<{clothes: Clothes[]}>(),
+);
 
 export const selectClothes = createAction(
   '[Closet] Select clothes',

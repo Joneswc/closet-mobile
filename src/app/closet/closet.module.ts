@@ -11,6 +11,8 @@ import {clothesReducer} from './store/reducers/feature.reducer';
 import {StoreModule} from '@ngrx/store';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material';
+import {EffectsModule} from '@ngrx/effects';
+import {ClothesEffects} from './store/effects/clothes.effects';
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import {MatFormFieldModule} from '@angular/material';
     CommonModule,
     ClosetRoutingModule,
     SharedModule,
-    StoreModule.forFeature('clothes', clothesReducer)
+    StoreModule.forFeature('clothes', clothesReducer),
+    EffectsModule.forFeature( [ClothesEffects] )
   ]
 })
 export class ClosetModule { }

@@ -1,19 +1,20 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {ClosetModule} from './closet/closet.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {StoreModule} from '@ngrx/store';
+import {metaReducers, reducers} from './reducers';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {environment} from '../environments/environment';
+import {StoreRouterConnectingModule} from '@ngrx/router-store';
 import {CustomSerializer} from './reducers/custom-route-serializer';
-import { AngularFireModule } from '@angular/fire';
-import { EffectsModule } from '@ngrx/effects';
-import { AppEffects } from './app.effects';
+import {AngularFireModule} from '@angular/fire';
+import {EffectsModule} from '@ngrx/effects';
+import {AppEffects} from './app.effects';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { AppEffects } from './app.effects';
       serializer: CustomSerializer
     }),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireModule,
+    AngularFirestoreModule,
     EffectsModule.forRoot([AppEffects]),
   ],
   providers: [],

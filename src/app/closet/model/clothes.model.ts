@@ -1,7 +1,7 @@
 import {Category} from './category.model';
 
 export class Clothes {
-  id: number;
+  id: string;
   name: string;
   description: string;
   // category: string;

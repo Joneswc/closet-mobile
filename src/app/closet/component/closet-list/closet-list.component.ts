@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Clothes} from '../../../model/clothes.model';
 import {Action} from '@ngrx/store';
 import {selectClothes} from '../../store/actions/items.actions';
+import {Clothes} from '../../model/clothes.model';
 
 @Component({
   selector: 'app-closet-list',

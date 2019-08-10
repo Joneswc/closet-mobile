@@ -1,7 +1,7 @@
-import {Clothes} from '../../../model/clothes.model';
 import {Action, createReducer, on} from '@ngrx/store';
-import {createItem, DeleteItem, selectClothes, unselectClothes, UpdateItem} from '../actions/items.actions';
+import {createItem, DeleteItem, selectClothes, unselectClothes, updateClothesList, UpdateItem} from '../actions/items.actions';
 import {createEntityAdapter, EntityState} from '@ngrx/entity';
+import {Clothes} from '../../model/clothes.model';
 
 export const clothesAdapter = createEntityAdapter<Clothes>({
   // selectId: clothes => clothes.id, // seleciona id dado a entidade
@@ -27,6 +27,7 @@ const initialState = clothesAdapter.getInitialState();
 
 const reducer = createReducer(
   initialState,
+  on(updateClothesList, (state, {clothes}) => clothesAdapter.addAll(clothes, state) ),
   on(selectClothes, (state, {clothes}) => ({...state, clothes})  ),
   on(unselectClothes, (state: ClosetState) => {
     const {clothes, ...rest} = state;
