@@ -29,14 +29,11 @@ const reducer = createReducer(
   initialState,
   on(updateClothesList, (state, {clothes}) => clothesAdapter.addAll(clothes, state) ),
   on(selectClothes, (state, {clothes}) => ({...state, clothes})  ),
-  on(unselectClothes, (state: ClosetState) => {
+  on(unselectClothes, UpdateItem, (state: ClosetState) => {
     const {clothes, ...rest} = state;
     return rest;
   }),
   on(createItem, (state, {clothes}) => clothesAdapter.addOne(clothes, state) ),
-  on(UpdateItem, (state, {clothes}) =>
-    clothesAdapter.updateOne({id: clothes.id, changes: clothes}, state)
-  ),
   on(DeleteItem, (state, {id}) => clothesAdapter.removeOne(id, state))
 );
 

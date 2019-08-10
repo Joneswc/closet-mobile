@@ -1,16 +1,27 @@
 import {Injectable} from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
-import {createEffect} from '@ngrx/effects';
+import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {Clothes} from '../../model/clothes.model';
-import {map} from 'rxjs/operators';
-import {updateClothesList} from '../actions/items.actions';
+import {exhaustMap, map, switchMap} from 'rxjs/operators';
+import {updateClothesList, UpdateItem} from '../actions/items.actions';
 
 @Injectable()
 export class ClothesEffects {
 
-  updateClothesList$ = createEffect( () => this.firestore.collection<Clothes>('items').valueChanges()
+  updateClothesList$ = createEffect(
+    () => this.firestore.collection<Clothes>('items').valueChanges()
                                                     .pipe( map( clothes => updateClothesList( { clothes } ) ) ));
 
-  constructor(private firestore: AngularFirestore) {}
+  updateClothes$ = createEffect( () => this.action$.pipe(
+    ofType(UpdateItem),
+    exhaustMap(action =>
+      this.firestore.doc(`clothes/${action.clothes.id}`).set(action.clothes)
+    )
+  ), {dispatch: false} );
+
+  constructor(private action$: Actions, private firestore: AngularFirestore) {}
 
 }
+
+// switchMap() - vai trocar 1a execução pela segunda, mas vai jogar as duas no banco
+// por isso, usar exhaustMap
