@@ -1,6 +1,6 @@
 import {createSelector} from '@ngrx/store';
-import {getClothesState} from '../reducers/feature.reducer';
 import {clothesAdapter} from '../reducers/items.reducer';
+import {getClothesState} from '../reducers/feature.reducers';
 
 export const getClosetState = createSelector(
   getClothesState,

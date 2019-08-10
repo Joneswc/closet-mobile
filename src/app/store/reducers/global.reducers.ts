@@ -5,7 +5,7 @@ import {
   createSelector,
   MetaReducer
 } from '@ngrx/store';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import {routerReducer, RouterReducerState} from '@ngrx/router-store';
 import {CustomSerializer, RouterStateUrl} from './custom-route-serializer';
 
