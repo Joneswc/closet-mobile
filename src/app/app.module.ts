@@ -12,6 +12,8 @@ import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import {CustomSerializer} from './reducers/custom-route-serializer';
 import { AngularFireModule } from '@angular/fire';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './app.effects';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { AngularFireModule } from '@angular/fire';
     }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireModule,
+    EffectsModule.forRoot([AppEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]
