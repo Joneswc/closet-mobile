@@ -2,6 +2,7 @@
   "appId": "com.jones.closet",
   "appName": "Closet",
   "bundledWebRuntime": false,
+  "windowsAndroidStudioPath": "C:\\Users\\Jones\\AppData\\Local\\JetBrains\\Toolbox\\apps\\AndroidStudio\\ch-0\\183.5692245\\bin\\studio64.exe",
   "npmClient": "npm",
   "webDir": "www"
 }

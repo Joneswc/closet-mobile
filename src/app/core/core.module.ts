@@ -7,10 +7,11 @@ import { LayoutComponent } from './containers/layout/layout.component';
 import { HomeComponent } from './containers/home/home.component';
 import {EffectsModule} from '@ngrx/effects';
 import {CoreEffects} from './store/effects/core.effects';
+import { AddclothesComponent } from './containers/addclothes/addclothes.component';
 
 
 @NgModule({
-  declarations: [LayoutComponent, HomeComponent],
+  declarations: [LayoutComponent, HomeComponent, AddclothesComponent],
   imports: [
     CommonModule,
     CoreRoutingModule,
