@@ -4,6 +4,6 @@ export class Clothes {
   id: string;
   name: string;
   description: string;
-  // category: string;
   category: Category;
+  // category: string;
 }

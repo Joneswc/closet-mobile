@@ -1,1 +1,19 @@
-<p>addclothes works!</p>
+<!--<p>addclothes works!</p>-->
+<mat-toolbar color="accent" >Adicione um novo item ao seu armário</mat-toolbar>
+<form [formGroup]="addClothesForm" (ngSubmit)="onSubmit()" class="example-form">
+  <mat-card-content>
+    <mat-form-field>
+      <input (focus)="onFocus($event)" matInput type="name" placeholder="Nome" formControlName="name" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="submitted && f.name.errors">
+        <!--      <span *ngIf="f.name.errors.required">preencha o nome do item</span>-->
+        <span *ngIf="!addClothesForm.get('name').invalid && !addClothesForm.get('name').touched">o nome deve ser preenchido</span>
+      </mat-error>
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <input (focus)="onFocus($event)" matInput type="description" placeholder="Descrição" formControlName="description" >
+    </mat-form-field>
+    <br />
+    <button mat-raised-button type="submit" [disabled]="!addClothesForm.invalid" color="primary">Adicionar</button>
+  </mat-card-content>
+</form>
