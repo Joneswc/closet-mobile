@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MyErrorStateMatcher} from './error.component';
+import {Action} from '@ngrx/store';
+import {createItem} from '../../../closet/store/actions/items.actions';
 
 @Component({
   selector: 'app-addclothes',
@@ -15,6 +17,9 @@ export class AddclothesComponent implements OnInit {
   loggingerror: string;
 
   constructor(private fb: FormBuilder) { }
+
+  @Output()
+  actionEmmiter = new EventEmitter<Action>();
 
   ngOnInit() {
     this.addClothesForm = this.fb.group({
@@ -35,6 +40,7 @@ export class AddclothesComponent implements OnInit {
       console.log('validation error');
       return;
     }
+    this.actionEmmiter.emit(createItem({clothes: this.addClothesForm.value}));
   }
 
   onFocus(event: any) {
