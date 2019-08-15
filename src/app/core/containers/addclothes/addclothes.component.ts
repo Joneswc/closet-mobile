@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
 import {MyErrorStateMatcher} from './error.component';
 
 @Component({
@@ -28,13 +28,13 @@ export class AddclothesComponent implements OnInit {
     return this.addClothesForm.controls;
   }
 
-  onSubmit() {
+  onSubmit(form: NgForm) {
+    console.log(form);
     this.submitted = true;
     if (this.addClothesForm.invalid) {
       console.log('validation error');
       return;
     }
-    alert('SUCCESS :-)\n' + JSON.stringify(this.addClothesForm.value, null, 4));
   }
 
   onFocus(event: any) {
