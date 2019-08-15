@@ -28,8 +28,8 @@ export class AddclothesComponent implements OnInit {
     return this.addClothesForm.controls;
   }
 
-  onSubmit(form: NgForm) {
-    console.log(form);
+  onSubmit() {
+    console.log(this.addClothesForm.value);
     this.submitted = true;
     if (this.addClothesForm.invalid) {
       console.log('validation error');
