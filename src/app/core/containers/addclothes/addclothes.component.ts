@@ -1,8 +1,9 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MyErrorStateMatcher} from './error.component';
 import {Action} from '@ngrx/store';
 import {createItem} from '../../../closet/store/actions/items.actions';
+import {Clothes} from '../../../closet/model/clothes.model';
 
 @Component({
   selector: 'app-addclothes',
@@ -18,14 +19,19 @@ export class AddclothesComponent implements OnInit {
 
   constructor(private fb: FormBuilder) { }
 
+  @Input()
+  set clothes(clothes: Clothes) {
+    if (clothes) {
+      this.addClothesForm.patchValue(clothes);
+    }
+  }
+
   @Output()
   actionEmmiter = new EventEmitter<Action>();
 
   ngOnInit() {
     this.addClothesForm = this.fb.group({
       name: ['', Validators.required],
-      description: '',
-      // category: ['', Validators.required()]
     });
   }
 

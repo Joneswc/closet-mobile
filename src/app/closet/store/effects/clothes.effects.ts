@@ -3,7 +3,7 @@ import {AngularFirestore} from '@angular/fire/firestore';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {Clothes} from '../../model/clothes.model';
 import {catchError, concatMap, exhaustMap, map, switchMap} from 'rxjs/operators';
-import {updateClothesList, UpdateItem} from '../actions/items.actions';
+import {updateClothesList, UpdateItem, DeleteItem} from '../actions/items.actions';
 import {config, from, of} from 'rxjs';
 import {navigateTo} from '../../../store/actions/app.actions';
 import {showSnackBar} from '../../../core/store/actions/core.actions';
@@ -31,6 +31,23 @@ export class ClothesEffects {
       )
     ),
   ));
+
+  deleteClothes$ = createEffect( () => this.action$.pipe(
+    ofType(DeleteItem),
+    exhaustMap( (action) =>
+      from( this.firestore.doc(`clothes/${action.id}`).delete() ).pipe(
+        concatMap( () => from( [
+          navigateTo( {commands: ['core', 'layout', 'closet']} ),
+          showSnackBar( {message: `Item excluído`, config: {}} )
+        ]) ),
+        catchError( () => of(showSnackBar(
+          {message: `Ops, something goes wrong`, config: {
+              duration: 5000
+            }} )
+        ) )
+      )
+    ),
+    ));
 
   constructor(private action$: Actions, private firestore: AngularFirestore) {}
 
