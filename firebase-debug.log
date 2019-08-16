@@ -1,0 +1,13 @@
+[debug] [2019-08-16T14:46:00.104Z] ----------------------------------------------------------------------
+[debug] [2019-08-16T14:46:00.109Z] Command:       C:\Program Files\nodejs\node.exe C:\Jones\SENAC\MOBILE\Angular\closet-mobile\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2019-08-16T14:46:00.109Z] CLI Version:   6.12.0
+[debug] [2019-08-16T14:46:00.109Z] Platform:      win32
+[debug] [2019-08-16T14:46:00.109Z] Node Version:  v11.13.0
+[debug] [2019-08-16T14:46:00.122Z] Time:          Fri Aug 16 2019 11:46:00 GMT-0300 (GMT-03:00)
+[debug] [2019-08-16T14:46:00.122Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=1003986390&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
