@@ -4,15 +4,11 @@
   <mat-card-content>
     <mat-form-field>
       <input matInput placeholder="Nome da peça" formControlName="name" [errorStateMatcher]="matcher">
-      <mat-error *ngIf="submitted && f.name.errors">
-        <!--      <span *ngIf="f.name.errors.required">preencha o nome do item</span>-->
-        <span *ngIf="!addClothesForm.get('name').invalid && !addClothesForm.get('name').touched">o nome deve ser preenchido</span>
-      </mat-error>
     </mat-form-field>
     <br />
-    <mat-form-field>
-      <input (focus)="onFocus($event)" matInput type="description" placeholder="Descrição" formControlName="description" >
-    </mat-form-field>
+<!--    <mat-form-field>-->
+<!--      <input (focus)="onFocus($event)" matInput type="description" placeholder="Descrição" formControlName="description" >-->
+<!--    </mat-form-field>-->
     <br />
     <button mat-raised-button (click)="onSubmit()" [disabled]="addClothesForm.invalid" color="primary">Adicionar</button>
   </mat-card-content>

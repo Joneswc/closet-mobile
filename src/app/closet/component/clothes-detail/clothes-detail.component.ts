@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Clothes} from '../../model/clothes.model';
 import {Action} from '@ngrx/store';
-import {unselectClothes, UpdateItem, DeleteItem} from '../../store/actions/items.actions';
+import {unselectClothes, UpdateItem, DeleteItem, createItem} from '../../store/actions/items.actions';
 import {FormBuilder} from '@angular/forms';
 
 @Component({
@@ -40,7 +40,11 @@ export class ClothesDetailComponent implements OnInit {
   }
 
   update() {
-    this.actionEmitter.emit(UpdateItem({clothes: this.clothesForm.value}));
+    if (this.clothesForm.get('id') && this.clothesForm.get('id').value !== '') {
+      this.actionEmitter.emit(UpdateItem({clothes: this.clothesForm.value}));
+    } else {
+      this.actionEmitter.emit(createItem({clothes: this.clothesForm.value}));
+    }
   }
 
   delete() {
