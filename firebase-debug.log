@@ -1,0 +1,25 @@
+[debug] [2019-08-17T18:00:13.167Z] ----------------------------------------------------------------------
+[debug] [2019-08-17T18:00:13.170Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\clayton.chagas\WebstormProjects\closet-mobile\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-08-17T18:00:13.170Z] CLI Version:   6.12.0
+[debug] [2019-08-17T18:00:13.170Z] Platform:      win32
+[debug] [2019-08-17T18:00:13.170Z] Node Version:  v10.15.3
+[debug] [2019-08-17T18:00:13.172Z] Time:          Sat Aug 17 2019 15:00:13 GMT-0300 (GMT-03:00)
+[debug] [2019-08-17T18:00:13.172Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-17T18:00:13.185Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-17T18:00:13.185Z] > authorizing via signed-in user
+[debug] [2019-08-17T18:00:13.185Z] [iam] checking project closet-match-clothes for permissions ["firebase.projects.get"]
+[debug] [2019-08-17T18:00:13.188Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/closet-match-clothes:testIamPermissions  
+
+[debug] [2019-08-17T18:00:14.181Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-17T18:00:14.186Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/closet-match-clothes  
+ 
+[debug] [2019-08-17T18:00:15.092Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\clayton.chagas\WebstormProjects\closet-mobile'...
+[info] 
+[debug] [2019-08-17T18:00:15.096Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/179896187543/clients/_:getWebAppConfig  
+ 
+[debug] [2019-08-17T18:00:16.345Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: www
+[info] +  hosting: Local server: http://localhost:5000

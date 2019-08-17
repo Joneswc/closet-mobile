@@ -15,6 +15,7 @@ import {AngularFireModule} from '@angular/fire';
 import {EffectsModule} from '@ngrx/effects';
 import {AppEffects} from './app.effects';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireAuthModule} from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -32,12 +33,13 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
         strictActionImmutability: true
       }
     }),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production, actionsBlocklist: ['\\[Core - Auth\\]'] }),
     StoreRouterConnectingModule.forRoot({
       serializer: CustomSerializer
     }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     EffectsModule.forRoot([AppEffects]),
   ],
   providers: [],

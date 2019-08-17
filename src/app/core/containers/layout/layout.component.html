@@ -7,6 +7,15 @@
       <mat-list-item routerLink="/core/layout/closet" (click)="sidenav.close()">
         <mat-icon>list_view</mat-icon>Clothes
       </mat-list-item>
+<!--      <mat-list-item routerLink="/core/layout/closet" (click)="sidenav.close()">-->
+      <mat-list-item  (click)="logout(); sidenav.close()" *ngIf="isAuthenticated$ | async; else login">
+        <mat-icon>close</mat-icon>Logout
+      </mat-list-item>
+      <ng-template #login>
+        <mat-list-item routerLink="/core/layout/login" (click)="sidenav.close()">
+          <mat-icon>person</mat-icon>Login
+        </mat-list-item>
+      </ng-template>
 <!--      <mat-list-item routerLink="/core/layout/addclothes" (click)="sidenav.close()">-->
 <!--        <mat-icon>add</mat-icon>Add Roupa-->
 <!--      </mat-list-item>-->
