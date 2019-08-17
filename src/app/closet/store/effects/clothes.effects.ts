@@ -51,30 +51,34 @@ export class ClothesEffects {
 
   addNewClothes$ = createEffect( () => this.action$.pipe(
     ofType(createItem),
-    exhaustMap( (action) =>
-    from( this.firestore.doc( `clothes/${this.createId()}` ).set({
-      id: this.anotherId,
-      name: action.clothes.name
-    })).pipe(
-      concatMap( () => from( [
-        navigateTo({commands: ['core', 'layout', 'closet']}),
-        showSnackBar( {message: `new item ${action.clothes.name} was added`, config: {}} )
-      ]) ),
-      catchError( () => of(showSnackBar(
-        {message: `Ops, something goes wrong`, config: {
-            duration: 5000
-          }} )
-      ) )
-    )
+    exhaustMap( (action) => {
+      const idFire = this.firestore.createId();
+      return from(this.firestore.doc(`clothes/${idFire}`).set({
+          id: idFire,
+          name: action.clothes.name
+        })).pipe(
+          concatMap(() => from([
+            navigateTo({commands: ['core', 'layout', 'closet']}),
+            showSnackBar({message: `new item ${action.clothes.name} was added`, config: {}})
+          ])),
+          catchError(() => of(showSnackBar(
+            {
+              message: `Ops, something goes wrong`, config: {
+                duration: 5000
+              }
+            })
+          ))
+        );
+      }
     ),
   ) );
 
   constructor(private action$: Actions, private firestore: AngularFirestore) {}
 
-  anotherId: string;
-  private createId() {
-    this.anotherId = this.firestore.createId();
-    return this.anotherId;
-  }
+  // anotherId: string;
+  // private createId() {
+  //   this.anotherId = this.firestore.createId();
+  //   return this.anotherId;
+  // }
 
 }
