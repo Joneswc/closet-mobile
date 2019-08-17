@@ -29,12 +29,13 @@ const reducer = createReducer(
   initialState,
   on(updateClothesList, (state, {clothes}) => clothesAdapter.addAll(clothes, state) ),
   on(selectClothes, (state, {clothes}) => ({...state, clothes})  ),
-  on(unselectClothes, UpdateItem, (state: ClosetState) => {
+  on(unselectClothes, UpdateItem, createItem, DeleteItem, (state: ClosetState) => {
     const {clothes, ...rest} = state;
     return rest;
   }),
-  on(createItem, (state, {clothes}) => clothesAdapter.addOne(clothes, state) ),
-  on(DeleteItem, (state, {id}) => clothesAdapter.removeOne(id, state))
+  // quando não tem persistencia, essas linhas são importantes pra mostrar as ações na tela
+  // on(createItem, (state, {clothes}) => clothesAdapter.addOne(clothes, state) ),
+  // on(DeleteItem, (state, {id}) => clothesAdapter.removeOne(id, state))
 );
 
 export function reducerCloset(state: ClosetState, action: Action) {

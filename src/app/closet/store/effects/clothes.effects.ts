@@ -51,8 +51,7 @@ export class ClothesEffects {
 
   addNewClothes$ = createEffect( () => this.action$.pipe(
     ofType(createItem),
-    exhaustMap( (action) =>
-    from( this.firestore.doc( `clothes/${this.createId()}` ).set({
+    exhaustMap( (action) => from( this.firestore.doc( `clothes/${this.createId()}` ).set({
       id: this.anotherId,
       name: action.clothes.name
     })).pipe(
