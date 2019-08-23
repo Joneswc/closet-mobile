@@ -1,8 +1,8 @@
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {Injectable} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
-import {catchError, exhaustMap, map, mapTo, switchMap, switchMapTo, tap} from 'rxjs/operators';
-import {EMPTY, from, of} from 'rxjs';
+import {catchError, exhaustMap, map, mapTo, tap} from 'rxjs/operators';
+import {from, of} from 'rxjs';
 import {signInEmail, signInGoogle, signout, signoutSuccess, updateUserInfo} from '../actions/auth.actions';
 import {auth} from 'firebase/app';
 import {showSnackBar} from '../actions/core.actions';

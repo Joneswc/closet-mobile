@@ -25,4 +25,5 @@ export class LayoutComponent implements OnInit {
   logout() {
     this.store.dispatch(signout());
   }
+
 }

@@ -2,9 +2,9 @@ import {Injectable} from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {Clothes} from '../../model/clothes.model';
-import {catchError, concatMap, exhaustMap, map, switchMap} from 'rxjs/operators';
-import {updateClothesList, UpdateItem, DeleteItem, createItem} from '../actions/items.actions';
-import {config, from, of} from 'rxjs';
+import {catchError, concatMap, exhaustMap, map} from 'rxjs/operators';
+import {createItem, DeleteItem, updateClothesList, UpdateItem} from '../actions/items.actions';
+import {from, of} from 'rxjs';
 import {navigateTo} from '../../../store/actions/app.actions';
 import {showSnackBar} from '../../../core/store/actions/core.actions';
 
@@ -74,11 +74,5 @@ export class ClothesEffects {
   ) );
 
   constructor(private action$: Actions, private firestore: AngularFirestore) {}
-
-  // anotherId: string;
-  // private createId() {
-  //   this.anotherId = this.firestore.createId();
-  //   return this.anotherId;
-  // }
 
 }

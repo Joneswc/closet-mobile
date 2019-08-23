@@ -1,6 +1,6 @@
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {MatSnackBar} from '@angular/material';
-import {delay, tap} from 'rxjs/operators';
+import {tap} from 'rxjs/operators';
 import {showSnackBar} from '../actions/core.actions';
 import {Injectable} from '@angular/core';
 

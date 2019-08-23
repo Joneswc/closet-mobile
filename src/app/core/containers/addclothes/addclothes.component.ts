@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {MyErrorStateMatcher} from './error.component';
 import {Action} from '@ngrx/store';
 import {createItem} from '../../../closet/store/actions/items.actions';
 import {Clothes} from '../../../closet/model/clothes.model';
@@ -14,7 +13,6 @@ export class AddclothesComponent implements OnInit {
 
   addClothesForm: FormGroup;
   submitted = false;
-  matcher = new MyErrorStateMatcher();
   loggingerror: string;
 
   constructor(private fb: FormBuilder) { }

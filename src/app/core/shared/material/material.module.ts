@@ -5,11 +5,10 @@ import {
   MatIconModule,
   MatInputModule,
   MatListModule,
-  MatSidenavModule, MatSnackBarModule,
+  MatSidenavModule,
+  MatSnackBarModule,
   MatToolbarModule
 } from '@angular/material';
-
-
 
 @NgModule({
   declarations: [],
